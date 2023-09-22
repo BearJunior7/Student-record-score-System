@@ -177,7 +177,7 @@ public class BackupActivity extends Activity {
 //设置一封草稿邮件
 		Draft draft = new Draft()
 				.setNickname("小学生")                      //发件人昵称
-				.setTo("2475867157@qq.com")                        //收件人邮箱
+				.setTo("xxxxxxxxx@qq.com")                        //收件人邮箱
 				.setSubject("备份")             //邮件主题
 				.setText(content);                 //邮件正文
 
