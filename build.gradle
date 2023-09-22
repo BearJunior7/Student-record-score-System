@@ -1,0 +1,83 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+         repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        maven { url 'https://maven.aliyun.com/repository/spring/' }
+        maven { url 'https://maven.aliyun.com/repository/spring-plugin/' }
+        maven { url 'https://maven.aliyun.com/repository/grails-core/' }
+        maven { url 'https://maven.aliyun.com/repository/apache-snapshots/' }
+        jcenter()
+        maven { url "https://dl.google.com/dl/android/maven2/" }
+        maven { url "https://jitpack.io" }
+        maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
+        //maven { url 'https://maven.google.com' }
+        //google()
+    } 
+
+ dependencies {
+       classpath 'com.android.tools.build:gradle:3.5.3'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+
+  
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/central/" }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        maven { url 'https://maven.aliyun.com/repository/spring/' }
+        maven { url 'https://maven.aliyun.com/repository/spring-plugin/' }
+        maven { url 'https://maven.aliyun.com/repository/grails-core/' }
+        maven { url 'https://maven.aliyun.com/repository/apache-snapshots/' }
+        jcenter()
+        maven { url "https://dl.google.com/dl/android/maven2/" }
+        maven { url "https://jitpack.io" }
+        maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
+        //maven { url 'https://maven.google.com' }
+        //google()
+    }
+
+    
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//cc9999
+//是否是执行Debug相关task (通用函数, 可供子module调用)
+def isDebug() {
+    def taskNames = gradle.startParameter.taskNames
+    for (tn in taskNames) {
+        if ((tn.contains("install") || tn.contains("assemble")) && tn.contains("Debug")) {
+            return true
+        }
+    }
+    return false
+}
+
+allprojects {
+    def tmpdir = project.rootDir.getAbsolutePath().substring(0, 1)
+    buildDir = tmpdir + ":\\build\\${rootProject.name}\\${project.name}"
+}
+//cc9999

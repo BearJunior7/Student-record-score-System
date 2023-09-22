@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/search"
+        android:title="搜索"
+        android:icon="@drawable/psearch"
+        android:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/stu_add"
+        android:icon="@drawable/addstudent_image"
+        android:title="新增"
+        android:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/backup"
+        android:icon="@drawable/refreshstudent_image"
+        android:title="备份"
+        android:showAsAction="always">
+    </item>
+
+
+</menu>
